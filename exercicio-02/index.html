@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lista de Tarefas</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+
+<body id="glob">
   <header>
     <div class="banner"></div>
     <section class="container">
-      <h1>✅ Lista de tarefas</h1>
+      <h1>Lista de Tarefas 🎯🎯</h1>
+      <button id="toggle-theme">Trocar Tema</button>
     </section>
   </header>
 
@@ -20,26 +23,31 @@
     </section>
 
     <section class="block">
-      <p>Escreva abaixo as tarefas que deseja que apareça... (Exercício 02)</p>
+      <p>Tarefas a serem realizadas:</p>
     </section>
 
-    <section class="block">
+    <!-- Wrapper para agrupar a lista e o formulário -->
+    <div class="tasks-form-wrapper">
+      <!-- Lista de tarefas -->
       <ul class="tasks" id="taskList">
         <!-- Aqui vão as tarefas -->
       </ul>
 
+      <!-- Formulário para adicionar e filtrar tarefas -->
       <form id="checklist">
         <div class="filter">
           <label for="filter">Filtrar tarefas:</label>
           <input type="text" name="filter" id="filter" placeholder="Digite o nome da tarefa..." />
         </div>
 
-        <textarea name="task-desc" id="taskDesc" placeholder="Digite a descrição da tarefa aqui..." autofocus></textarea>
+        <textarea name="task-desc" id="taskDesc" placeholder="Digite a descrição da tarefa aqui..."
+          autofocus></textarea>
         <button type="button" id="buttonAdd">Adicionar Tarefa</button>
       </form>
-    </section>
+    </div>
   </main>
 
   <script src="main.js"></script>
 </body>
+
 </html>

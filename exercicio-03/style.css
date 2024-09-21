@@ -1,0 +1,149 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+    color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+.input-group label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+    max-width: 100%;
+}
+
+.input-group input:focus, .input-group select:focus {
+    border-color: green;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: whitesmoke;
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    color: black;
+    background-color: lightgreen;
+}
+
+#errorMessage {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Grid de Imagens */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px green;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+}
+
+.grid-item img {
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid white;
+}
+
+.image-actions {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: white;
+}
+
+.image-actions button, .image-actions a {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.image-actions button:hover, .image-actions a:hover {
+    color: black;
+    background-color: gray;
+    border: 2px solid green;
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex-basis: 100%;
+    }
+}

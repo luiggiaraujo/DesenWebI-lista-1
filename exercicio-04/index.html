@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Fotos com Localização</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Registrador de Fotos e Localização</h1>
+    
+    <form id="photoForm">
+        <div>
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+        <div>
+            <button type="button" id="takePhotoButton">Tirar Foto</button>
+            <input type="file" id="uploadPhoto" accept="image/*" style="display: none;">
+        </div>
+        <div>
+            <button type="button" id="getLocationButton">Obter Localização</button>
+            <div id="manualLocation" style="display: none;">
+                <label for="latitude">Latitude:</label>
+                <input type="number" id="latitude" step="any">
+                <label for="longitude">Longitude:</label>
+                <input type="number" id="longitude" step="any">
+            </div>
+        </div>
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+
+    <div id="preview">
+        <h2>Pré-visualização</h2>
+        <img id="photoPreview" alt="Pré-visualização da Foto">
+        <div id="mapPreview" style="height: 300px;"></div>
+    </div>
+
+    <h2>Registros</h2>
+    <table id="recordsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Localização</th>
+                <th>Data</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Registros serão inseridos aqui -->
+        </tbody>
+    </table>
+
+    <!-- Modal de detalhes -->
+    <div id="detailsModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" id="closeDetailsModal">&times;</span>
+            <h2>Detalhes da Foto</h2>
+            <img id="detailsPhoto" alt="Foto">
+            <h3 id="detailsTitle"></h3>
+            <p id="detailsDescription"></p>
+            <div id="detailsMap" style="height: 300px;"></div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmação de exclusão -->
+    <div id="confirmDeleteModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <p>Tem certeza que deseja excluir este registro?</p>
+            <button id="confirmDeleteButton">Sim</button>
+            <button id="cancelDeleteButton">Não</button>
+        </div>
+    </div>
+
+    <!-- Modal de edição -->
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" id="closeEditModal">&times;</span>
+            <h2>Editar Registro</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div>
+                    <label for="editTitle">Título:</label>
+                    <input type="text" id="editTitle" required>
+                </div>
+                <div>
+                    <label for="editDescription">Descrição:</label>
+                    <textarea id="editDescription"></textarea>
+                </div>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <!-- Inclua o script do Leaflet para exibir mapas -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
