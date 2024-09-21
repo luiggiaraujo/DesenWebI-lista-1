@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const photoForm = document.getElementById('photoForm');
     const takePhotoButton = document.getElementById('takePhotoButton');
     const uploadPhoto = document.getElementById('uploadPhoto');
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let hasCamera = false;
 
     navigator.mediaDevices.enumerateDevices()
-        .then(function(devices) {
-            devices.forEach(function(device) {
+        .then(function (devices) {
+            devices.forEach(function (device) {
                 if (device.kind === 'videoinput') {
                     hasCamera = true;
                 }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Evento para tirar foto ou fazer upload
-    takePhotoButton.addEventListener('click', function() {
+    takePhotoButton.addEventListener('click', function () {
         if (hasCamera) {
             capturePhoto();
         } else {
@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    uploadPhoto.addEventListener('change', function(event) {
+    uploadPhoto.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 photoData = e.target.result;
                 displayPhoto();
             };
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function capturePhoto() {
         navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(stream) {
+            .then(function (stream) {
                 const video = document.createElement('video');
                 video.srcObject = stream;
                 video.play();
@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const captureButton = document.createElement('button');
                 captureButton.textContent = 'Capturar Foto';
-                captureButton.addEventListener('click', function() {
+                captureButton.addEventListener('click', function () {
                     canvas.width = video.videoWidth;
                     canvas.height = video.videoHeight;
                     context.drawImage(video, 0, 0);
                     photoData = canvas.toDataURL('image/png');
-                    stream.getTracks().forEach(function(track) {
+                    stream.getTracks().forEach(function (track) {
                         track.stop();
                     });
                     video.remove();
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.appendChild(video);
                 document.body.appendChild(captureButton);
             })
-            .catch(function(err) {
+            .catch(function (err) {
                 alert('Erro ao acessar a câmera: ' + err.message);
             });
     }
@@ -92,15 +92,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Evento para obter localização
-    getLocationButton.addEventListener('click', function() {
+    getLocationButton.addEventListener('click', function () {
         if ('geolocation' in navigator) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 locationData = {
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 };
                 displayMap(locationData.latitude, locationData.longitude);
-            }, function(error) {
+            }, function (error) {
                 alert('Erro ao obter localização: ' + error.message);
                 manualLocation.style.display = 'block';
             });
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Evento de submit do formulário
-    photoForm.addEventListener('submit', function(event) {
+    photoForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const title = document.getElementById('title').value.trim();
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const records = JSON.parse(localStorage.getItem('photoRecords')) || [];
         recordsTableBody.innerHTML = '';
 
-        records.forEach(function(record, index) {
+        records.forEach(function (record, index) {
             const row = recordsTableBody.insertRow();
 
             row.insertCell(0).textContent = index + 1;
@@ -184,21 +184,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const viewButton = document.createElement('button');
             viewButton.textContent = 'Visualizar';
-            viewButton.addEventListener('click', function() {
+            viewButton.addEventListener('click', function () {
                 openDetailsModal(record);
             });
             actionsCell.appendChild(viewButton);
 
             const editButton = document.createElement('button');
             editButton.textContent = 'Editar';
-            editButton.addEventListener('click', function() {
+            editButton.addEventListener('click', function () {
                 openEditModal(record);
             });
             actionsCell.appendChild(editButton);
 
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Excluir';
-            deleteButton.addEventListener('click', function() {
+            deleteButton.addEventListener('click', function () {
                 openConfirmDeleteModal(record.id);
             });
             actionsCell.appendChild(deleteButton);
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
         detailsModal.style.display = 'block';
     }
 
-    closeDetailsModalButton.addEventListener('click', function() {
+    closeDetailsModalButton.addEventListener('click', function () {
         detailsModal.style.display = 'none';
     });
 
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         recordIdToDelete = id;
     }
 
-    confirmDeleteButton.addEventListener('click', function() {
+    confirmDeleteButton.addEventListener('click', function () {
         let records = JSON.parse(localStorage.getItem('photoRecords')) || [];
         records = records.filter(record => record.id !== recordIdToDelete);
         localStorage.setItem('photoRecords', JSON.stringify(records));
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
         confirmDeleteModal.style.display = 'none';
     });
 
-    cancelDeleteButton.addEventListener('click', function() {
+    cancelDeleteButton.addEventListener('click', function () {
         confirmDeleteModal.style.display = 'none';
     });
 
@@ -273,11 +273,11 @@ document.addEventListener('DOMContentLoaded', function() {
         editModal.style.display = 'block';
     }
 
-    closeEditModalButton.addEventListener('click', function() {
+    closeEditModalButton.addEventListener('click', function () {
         editModal.style.display = 'none';
     });
 
-    editForm.addEventListener('submit', function(event) {
+    editForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const id = parseInt(editIdInput.value);

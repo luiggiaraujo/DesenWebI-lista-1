@@ -53,7 +53,8 @@ h1 {
     margin-bottom: 5px;
 }
 
-.input-group input, .input-group select {
+.input-group input,
+.input-group select {
     padding: 10px;
     font-size: 1rem;
     border: 1px solid gray;
@@ -62,7 +63,8 @@ h1 {
     max-width: 100%;
 }
 
-.input-group input:focus, .input-group select:focus {
+.input-group input:focus,
+.input-group select:focus {
     border-color: green;
 }
 
@@ -122,7 +124,8 @@ h1 {
     background-color: white;
 }
 
-.image-actions button, .image-actions a {
+.image-actions button,
+.image-actions a {
     padding: 10px;
     margin-top: 10px;
     font-size: 1rem;
@@ -136,7 +139,8 @@ h1 {
     transition: background-color 0.3s;
 }
 
-.image-actions button:hover, .image-actions a:hover {
+.image-actions button:hover,
+.image-actions a:hover {
     color: black;
     background-color: gray;
     border: 2px solid green;

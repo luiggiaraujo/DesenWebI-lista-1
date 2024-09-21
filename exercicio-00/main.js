@@ -1,4 +1,4 @@
-// Criando um contador de cliques em um botão usando JavaScript para manipular o DOM.
+// Criando um contador de cliques em um botão usando JavaScript para manipular o DOM
 
 const btn = document.querySelector('button'); // Selecionando o botão
 const count = document.querySelector('h3'); // Selecionando o contador

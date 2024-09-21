@@ -163,14 +163,14 @@ textarea:focus {
     outline: 2px solid blue;
 }
 
-/* Acessibilidade: foco visível */
+/* Acessibilidade de foco visível */
 button:focus,
 input:focus,
 textarea:focus {
     outline: 2px solid blue;
 }
 
-/* Acessibilidade: contraste mínimo */
+/* Acessibilidade de contraste mínimo */
 body,
 input,
 textarea,

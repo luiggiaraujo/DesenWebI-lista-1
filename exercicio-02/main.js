@@ -1,8 +1,8 @@
 // Verifica o tema no carregamento da página
 document.addEventListener('DOMContentLoaded', () => {
     const storedTheme = localStorage.getItem('theme') || 'light';
-    body.classList.remove(storedTheme == 'light' ? 'dark' : 'light')
-    body.classList.add(storedTheme == 'light' ? 'light' : 'dark')
+    body.classList.remove(storedTheme == 'light' ? 'dark' : 'light');
+    body.classList.add(storedTheme == 'light' ? 'light' : 'dark');
 });
 
 // Carregar tarefas do localStorage
@@ -178,15 +178,14 @@ buttonAdd.addEventListener('click', addTask);
 // Carrega tarefas ao iniciar
 loadTasks();
 
-const toggleTheme = document.getElementById('toggle-theme')
+const toggleTheme = document.getElementById('toggle-theme');
 toggleTheme.addEventListener('click', function (e) {
-    const storageTheme = localStorage.getItem('theme')
+    const storageTheme = localStorage.getItem('theme');
     try {
-        console.log('haha console')
         if (storageTheme) {
-            changeTheme(storageTheme)
+            changeTheme(storageTheme);
         } else {
-            changeTheme('light')
+            changeTheme('light');
         }
     } catch (error) {
     }
@@ -196,12 +195,12 @@ const body = document.body
 
 function changeTheme(value) {
     if (value == 'light') {
-        localStorage.setItem('theme', 'dark')
-        body.classList.remove('light')
-        body.classList.add('dark')
+        localStorage.setItem('theme', 'dark');
+        body.classList.remove('light');
+        body.classList.add('dark');
     } else {
-        localStorage.setItem('theme', 'light')
-        body.classList.remove('dark')
-        body.classList.add('light')
+        localStorage.setItem('theme', 'light');
+        body.classList.remove('dark');
+        body.classList.add('light');
     }
 }
