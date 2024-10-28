@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Informática</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="navbar">
+        <h1 class="navbar-title">Loja de Informática</h1>
+        <nav class="navbar-menu">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('cart')">Carrinho</a>
+            <a href="#" onclick="showSection('checkout')">Checkout</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <div id="home" class="section active">
+            <h2>Produtos</h2>
+            <div class="filters">
+                <select id="category-filter" onchange="filterProducts()">
+                    <option value="">Todas as Categorias</option>
+                    <option value="Monitor">Monitor</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Teclado">Teclado</option>
+                </select>
+
+                <select id="brand-filter" onchange="filterProducts()">
+                    <option value="">Todas as Marcas</option>
+                    <option value="Acer">Acer</option>
+                    <option value="AOC">AOC</option>
+                    <option value="Dell">Dell</option>
+                    <option value="HyperX">HyperX</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="LG">LG</option>
+                    <option value="Logitech">Logitech</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Razer">Razer</option>
+                    <option value="Samsung">Samsung</option>
+                </select>
+
+                <input type="text" id="search" placeholder="Pesquisar produtos..." oninput="filterProducts()" />
+            </div>
+
+            <div id="product-list" class="product-list">
+                <!-- Produtos serão exibidos aqui -->
+            </div>
+        </div>
+
+        <div id="cart" class="section" style="display:none;">
+            <h2>Carrinho de Compras</h2>
+            <div id="cart-list"></div>
+            <button onclick="checkout()">Finalizar Compra</button>
+        </div>
+
+        <div id="checkout" class="section" style="display:none;">
+            <h2>Checkout</h2>
+            <p>Por favor, insira seus dados para finalizar a compra.</p>
+            <form id="checkout-form" onsubmit="checkout(); return false;">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" required>
+                <button type="submit">Finalizar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Formas de Pagamento: Cartão de Crédito, Boleto, PayPal</p>
+        <p>Siga-nos nas redes sociais!</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

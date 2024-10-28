@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Monitor AOC 24'",
+    "description": "Monitor AOC 24 polegadas",
+    "price": 799.99,
+    "category": "Monitor",
+    "brand": "AOC",
+    "images": "images/MonitorAOC.webp"
+  },
+  {
+    "id": 2,
+    "name": "Monitor LG 24' LED Full HD",
+    "description": "Monitor LG 24 polegadas LED Full HD",
+    "price": 899.99,
+    "category": "Monitor",
+    "brand": "LG",
+    "images": "images/MonitorLG.webp"
+  },
+  {
+    "id": 3,
+    "name": "Monitor Samsung 27' Curvo",
+    "description": "Monitor Samsung 27 polegadas Curvo",
+    "price": 1099.99,
+    "category": "Monitor",
+    "brand": "Samsung",
+    "images": "images/MonitorSamsung.webp"
+  },
+  {
+    "id": 4,
+    "name": "Mouse Logitech MX Master 3",
+    "description": "Mouse Logitech MX Master 3",
+    "price": 399.99,
+    "category": "Mouse",
+    "brand": "Logitech",
+    "images": "images/MouseLogitech.webp"
+  },
+  {
+    "id": 5,
+    "name": "Mouse Microsoft Bluetooth Ergonomic",
+    "description": "Mouse Microsoft Bluetooth Ergonomic",
+    "price": 249.99,
+    "category": "Mouse",
+    "brand": "Microsoft",
+    "images": "images/MouseMicrosoft.webp"
+  },
+  {
+    "id": 6,
+    "name": "Mouse Razer DeathAdder",
+    "description": "Mouse Razer DeathAdder",
+    "price": 349.99,
+    "category": "Mouse",
+    "brand": "Razer",
+    "images": "images/MouseRazer.webp"
+  },
+  {
+    "id": 7,
+    "name": "Notebook Acer Aspire 5",
+    "description": "Notebook Acer Aspire 5",
+    "price": 2499.99,
+    "category": "Notebook",
+    "brand": "Acer",
+    "images": "images/NotebookAcer.webp"
+  },
+  {
+    "id": 8,
+    "name": "Notebook Dell Inspiron 15 3000",
+    "description": "Notebook Dell Inspiron 15 3000",
+    "price": 2999.99,
+    "category": "Notebook",
+    "brand": "Dell",
+    "images": "images/NotebookDell.webp"
+  },
+  {
+    "id": 9,
+    "name": "Notebook Lenovo Ideapad 3",
+    "description": "Notebook Lenovo Ideapad 3",
+    "price": 2799.99,
+    "category": "Notebook",
+    "brand": "Lenovo",
+    "images": "images/NotebookLenovo.webp"
+  },
+  {
+    "id": 10,
+    "name": "Teclado Mecânico HyperX Alloy FPS",
+    "description": "Teclado Mecânico HyperX Alloy FPS",
+    "price": 299.99,
+    "category": "Teclado",
+    "brand": "HyperX",
+    "images": "images/TecladoHyperX.webp"
+  },
+  {
+    "id": 11,
+    "name": "Teclado Logitech K380",
+    "description": "Teclado Logitech K380",
+    "price": 199.99,
+    "category": "Teclado",
+    "brand": "Logitech",
+    "images": "images/TecladoLogitech.webp"
+  },
+  {
+    "id": 12,
+    "name": "Teclado Mecânico Razer BlackWidow",
+    "description": "Teclado Mecânico Razer BlackWidow",
+    "price": 499.99,
+    "category": "Teclado",
+    "brand": "Razer",
+    "images": "images/TecladoRazer.webp"
+  }
+]

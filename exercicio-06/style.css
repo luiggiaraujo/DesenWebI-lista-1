@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 98%;
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.navbar-title {
+    flex: 2;
+    font-size: 1.5rem;
+}
+
+.navbar-menu {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    background-color: #555;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.section {
+    padding: 20px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filters select,
+.filters input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    /* Defina a largura desejada */
+    margin-right: 40px;
+    /* Espaço entre os elementos */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filters select:focus,
+.filters input:focus {
+    border-color: #640a7f;
+    /* Cor ao focar */
+    outline: none;
+    /* Remove a borda padrão do foco */
+}
+
+.filters input {
+    flex: 1;
+    /* Para o campo de pesquisa ocupar o espaço restante */
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Adaptação para diferentes tamanhos de tela */
+    gap: 20px;
+    /* Espaço entre os itens */
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #c85aea;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-item:hover {
+    border: 1.5px solid #640a7f;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #640a7f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c85aea;
+    color: black;
+    border: 1px solid black;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
